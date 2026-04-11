@@ -1,0 +1,83 @@
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  padding: 20px 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-section-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  padding: 0 8px;
+  margin-bottom: 6px;
+}
+
+.sidebar-nav { display: flex; flex-direction: column; gap: 2px; }
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: background 0.15s;
+  font-family: var(--font-body);
+}
+.sidebar-item:hover { background: var(--bg-elevated); }
+.sidebar-item.active { background: rgba(168,85,247,0.15); }
+.sidebar-item.active .sidebar-item-label { color: var(--accent); }
+.sidebar-item.active .sidebar-item-icon { filter: none; }
+
+.sidebar-item-icon { font-size: 1.1rem; flex-shrink: 0; }
+.sidebar-item-text { flex: 1; min-width: 0; }
+.sidebar-item-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text); line-height: 1.2; }
+.sidebar-item-desc { display: block; font-size: 0.68rem; color: var(--text-dim); }
+
+.sidebar-count {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 99px;
+  padding: 1px 7px;
+  flex-shrink: 0;
+}
+.sidebar-count-green { background: rgba(16,185,129,0.15); color: var(--green); }
+.sidebar-count-red { background: rgba(239,68,68,0.15); color: var(--red); }
+
+.sidebar-divider { height: 1px; background: var(--border); margin: 8px 0; }
+
+.sidebar-legend { display: flex; flex-direction: column; gap: 6px; padding: 0 4px; }
+.legend-item { display: flex; align-items: flex-start; gap: 8px; }
+.legend-emoji { font-size: 0.85rem; flex-shrink: 0; margin-top: 1px; }
+.legend-range { font-size: 0.72rem; font-weight: 700; }
+.legend-label { font-size: 0.72rem; color: var(--text-dim); }
+
+.sidebar-mood { padding: 0 4px; }
+.mood-meter {
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 8px 0 4px;
+}
+.mood-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--gold), var(--red), var(--accent));
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+.mood-label { font-size: 0.72rem; color: var(--text-dim); }

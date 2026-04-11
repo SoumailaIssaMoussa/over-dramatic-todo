@@ -1,0 +1,171 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-deep);
+}
+
+.auth-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.auth-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: pulse-orb 6s ease-in-out infinite;
+}
+.auth-orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(168,85,247,0.3), transparent);
+  top: -100px; left: -100px;
+}
+.auth-orb-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(236,72,153,0.2), transparent);
+  bottom: -80px; right: -80px;
+  animation-delay: 3s;
+}
+
+@keyframes pulse-orb {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.auth-particles {
+  position: absolute;
+  inset: 0;
+}
+.particle {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: var(--accent);
+  border-radius: 50%;
+  left: calc(var(--i) * 5.3%);
+  top: calc(var(--i) * 7.1% + 10%);
+  animation: float-particle calc(4s + var(--i) * 0.3s) ease-in-out infinite;
+  opacity: 0.4;
+}
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-20px); opacity: 0.8; }
+}
+
+.auth-card {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--shadow), var(--shadow-glow);
+}
+
+.auth-brand { text-align: center; margin-bottom: 24px; }
+.brand-icon { font-size: 3rem; margin-bottom: 12px; animation: sway 3s ease-in-out infinite; }
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+.brand-title {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+}
+.brand-subtitle { color: var(--text-muted); font-size: 0.875rem; }
+
+.drama-quote {
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.auth-alert {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.3);
+  color: #fca5a5;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-form { display: flex; flex-direction: column; gap: 0; }
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-wrapper input {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 0.9rem;
+  z-index: 1;
+}
+.input-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--text-muted);
+}
+.input-btn:hover { color: var(--text); }
+
+.auth-submit {
+  width: 100%;
+  justify-content: center;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  margin-top: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+}
+.auth-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(168,85,247,0.4);
+}
+.auth-submit:disabled { transform: none; }
+
+.spin { display: inline-block; animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+.auth-switch {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+.auth-switch a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.auth-switch a:hover { color: var(--accent2); }

@@ -1,33 +1,31 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
+const path = require("path");
 const connectDB = require("./config/db");
 
-// Charger les variables d'environnement
 dotenv.config();
-
-// Connecter à MongoDB
 connectDB();
 
 const app = express();
 
-// Middleware pour lire le JSON
+app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
 
+// Serve uploaded files statically
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
 // Routes
-const userRoutes = require("./routes/userRoutes");
-app.use("/api/users", userRoutes);
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/tasks", require("./routes/taskRoutes"));
+app.use("/api/categories", require("./routes/categoryRoutes"));
+app.use("/api/notifications", require("./routes/notificationRoutes"));
 
-const taskRoutes = require("./routes/taskRoutes");
-app.use("/api/tasks", taskRoutes);
-
-
-// Route test racine
 app.get("/", (req, res) => {
-  res.send("Backend + MongoDB running correctly 🚀");
+  res.send("Over-Dramatic To-Do Backend is LIVE and SUFFERING 🎭");
 });
 
-// Lancer le serveur
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+  console.log(`Server started on port ${PORT} — The drama begins...`);
 });
