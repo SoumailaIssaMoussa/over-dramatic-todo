@@ -1,0 +1,32 @@
+.story-overlay { position:fixed; inset:0; background:rgba(0,0,0,.75); display:flex; align-items:center; justify-content:center; z-index:1000; padding:20px; backdrop-filter:blur(6px); }
+.story-box { background:var(--bg-secondary); border:1px solid var(--accent); border-radius:20px; width:100%; max-width:620px; box-shadow:var(--mood-glow); display:flex; flex-direction:column; max-height:80vh; }
+.story-header { padding:24px 24px 0; display:flex; justify-content:space-between; align-items:flex-start; }
+.story-title  { font-size:1.2rem; font-weight:700; color:var(--text-primary); margin:0 0 4px; }
+.story-sub    { font-size:.8rem; color:var(--text-dim); margin:0; }
+.story-body   { padding:20px 24px; flex:1; overflow-y:auto; }
+.story-loading { display:flex; flex-direction:column; align-items:center; gap:12px; padding:32px; color:var(--text-dim); text-align:center; }
+.story-quill  { font-size:2.5rem; animation:float 2s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.story-dots   { display:flex; gap:6px; }
+.story-dots span { width:8px; height:8px; border-radius:50%; background:var(--accent); animation:pulse 1.4s ease-in-out infinite; }
+.story-dots span:nth-child(2) { animation-delay:.2s; }
+.story-dots span:nth-child(3) { animation-delay:.4s; }
+@keyframes pulse { 0%,80%,100%{opacity:.3} 40%{opacity:1} }
+.story-text p { color:var(--text-primary); line-height:1.8; font-size:.95rem; margin:0 0 14px; font-style:italic; }
+.story-error  { text-align:center; padding:24px; display:flex; flex-direction:column; gap:12px; align-items:center; color:var(--text-dim); }
+.story-footer { padding:16px 24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+.story-credit { font-size:.75rem; color:var(--text-dim); }
+
+/* ── Light theme story modal overrides ──────────────────────── */
+body.theme-light .story-overlay { background: rgba(0,0,0,0.5); }
+body.theme-light .story-box {
+  background: white;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+body.theme-light .story-title  { color: #2d3748; }
+body.theme-light .story-sub    { color: #718096; }
+body.theme-light .story-text p { color: #2d3748; }
+body.theme-light .story-footer { border-top-color: #e2e8f0; }
+body.theme-light .story-credit { color: #a0aec0; }
+body.theme-light .story-loading { color: #718096; }
+body.theme-light .story-error  { color: #718096; }

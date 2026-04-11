@@ -176,3 +176,124 @@
 .dd-item:hover { background: var(--bg-elevated); color: var(--red); }
 .dd-name { font-weight: 600; font-size: 0.875rem; color: var(--text); }
 .dd-email { font-size: 0.75rem; color: var(--text-dim); }
+.mood-indicator { font-size:.75rem; font-weight:700; padding:5px 12px; border-radius:20px; border:1px solid; letter-spacing:.02em; }
+.dd-item { display:flex; align-items:center; gap:10px; padding:9px 16px; color:var(--text-primary); font-size:.88rem; cursor:pointer; transition:.15s; background:none; border:none; width:100%; text-align:left; text-decoration:none; }
+.dd-item:hover { background:var(--accent-dim); color:var(--accent); }
+
+/* ── Theme Toggle Button ─────────────────────────────────────── */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 5px 10px 5px 6px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+.theme-toggle-btn:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+}
+
+.theme-toggle-track {
+  display: inline-block;
+  width: 32px;
+  height: 18px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  border-radius: 99px;
+  position: relative;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+/* In dark mode, slide thumb to the right */
+body.theme-dark .theme-toggle-thumb {
+  transform: translateX(14px);
+}
+
+.theme-toggle-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+/* ── Light theme header overrides ───────────────────────────── */
+body.theme-light .header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-bottom: none;
+  box-shadow: 0 4px 12px rgba(102,126,234,0.2);
+}
+body.theme-light .header-title {
+  background: linear-gradient(135deg, #ffffff, rgba(255,255,255,0.85));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.theme-light .header-sub { color: rgba(255,255,255,0.75); }
+body.theme-light .header-search input {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.3);
+  color: white;
+}
+body.theme-light .header-search input::placeholder { color: rgba(255,255,255,0.65); }
+body.theme-light .header-search input:focus {
+  background: rgba(255,255,255,0.3);
+  border-color: rgba(255,255,255,0.5);
+}
+body.theme-light .header-icon-btn {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.3);
+  color: white;
+}
+body.theme-light .header-icon-btn:hover { border-color: rgba(255,255,255,0.6); }
+body.theme-light .user-pill {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.3);
+}
+body.theme-light .user-pill:hover { border-color: rgba(255,255,255,0.6); }
+body.theme-light .user-name-label { color: white; }
+body.theme-light .theme-toggle-btn {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.35);
+}
+body.theme-light .theme-toggle-btn:hover {
+  border-color: rgba(255,255,255,0.7);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.2);
+}
+body.theme-light .theme-toggle-track {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.6);
+}
+body.theme-light .theme-toggle-thumb { background: white; }
+
+/* Light theme dropdown */
+body.theme-light .dropdown {
+  background: white;
+  border-color: #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+body.theme-light .dropdown-head { border-color: #e2e8f0; color: #2d3748; }
+body.theme-light .dd-divider { background: #e2e8f0; }
+body.theme-light .dd-name { color: #2d3748; }
+body.theme-light .dd-email { color: #718096; }
+body.theme-light .dd-item { color: #2d3748; }
+body.theme-light .dd-item:hover { background: #f7fafc; color: #667eea; }
+body.theme-light .notif-item:hover { background: #f7fafc; }
+body.theme-light .notif-item.unread { background: rgba(102,126,234,0.06); }
+body.theme-light .notif-msg { color: #2d3748; }
+body.theme-light .badge { background: #e53e3e; }

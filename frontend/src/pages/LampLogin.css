@@ -1,0 +1,95 @@
+/* ── Lamp Login layout ─────────────────────────────────────────── */
+.lamp-layout {
+  flex-direction: row;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Lamp wrapper ──────────────────────────────────────────────── */
+.lamp-wrap {
+  position: relative;
+  width: clamp(120px, 16vw, 200px);
+  height: clamp(180px, 24vw, 300px);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lamp-svg { width: 100%; height: 100%; overflow: visible; }
+
+/* shade */
+.lamp-shade {
+  fill: #d6d0c8;
+  transition: fill 0.5s ease, filter 0.5s ease;
+}
+.lamp-on .lamp-shade {
+  fill: #fff8ee;
+  filter: drop-shadow(0 0 28px rgba(255,210,80,0.6));
+}
+
+/* stem/base */
+.lamp-base {
+  fill: #b8b3aa;
+  transition: fill 0.5s ease;
+}
+body.theme-light .lamp-base { fill: #c8c3ba; }
+
+/* glow bloom under shade */
+.lamp-glow {
+  fill: #ffdb7a;
+  filter: blur(14px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.lamp-on .lamp-glow { opacity: 0.55; }
+
+/* cord */
+.lamp-cord {
+  stroke: #555;
+  stroke-width: 2.2;
+  fill: none;
+  transition: stroke 0.5s;
+}
+body.theme-light .lamp-cord { stroke: #888; }
+
+.lamp-bead {
+  fill: #d4a373;
+  transition: fill 0.5s;
+}
+body.theme-light .lamp-bead { fill: #c98a30; }
+
+/* hint text */
+.lamp-hint {
+  margin-top: 6px;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* mode pill top-right */
+.mode-pill {
+  position: fixed;
+  top: 1rem; right: 1.2rem;
+  font-size: 0.68rem;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ── Responsive: stack on narrow screens ──── */
+@media (max-width: 600px) {
+  .lamp-layout { flex-direction: column; gap: 1.5rem; }
+  .lamp-wrap   { width: 110px; height: 165px; }
+}

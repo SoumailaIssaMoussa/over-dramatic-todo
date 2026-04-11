@@ -67,3 +67,11 @@
   text-align: center;
 }
 .drama-tick.active { font-weight: 900; transform: scale(1.2); }
+
+/* ── Light theme drama slider overrides ─────────────────────── */
+body.theme-light .drama-slider-wrap {
+  background: #f7fafc;
+  border-color: #e2e8f0;
+}
+body.theme-light .drama-slider-label { color: #2d3748; }
+body.theme-light .drama-range::-webkit-slider-thumb { border-color: white; }

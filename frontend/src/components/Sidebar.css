@@ -81,3 +81,23 @@
   transition: width 0.5s ease;
 }
 .mood-label { font-size: 0.72rem; color: var(--text-dim); }
+.sidebar-link { text-decoration:none; display:flex; }
+.sidebar-badges { font-size:1rem; letter-spacing:.1em; margin:4px 0 0; }
+
+/* ── Light theme sidebar overrides ──────────────────────────── */
+body.theme-light .sidebar {
+  background: white;
+  border-right-color: #e2e8f0;
+}
+body.theme-light .sidebar-item:hover { background: #f7fafc; }
+body.theme-light .sidebar-item.active { background: rgba(102,126,234,0.1); }
+body.theme-light .sidebar-item.active .sidebar-item-label { color: #667eea; }
+body.theme-light .sidebar-item-label { color: #2d3748; }
+body.theme-light .sidebar-count { background: #edf2f7; color: #718096; }
+body.theme-light .sidebar-count-green { background: rgba(72,187,120,0.15); color: #276749; }
+body.theme-light .sidebar-count-red   { background: rgba(229,62,62,0.12);  color: #c53030; }
+body.theme-light .sidebar-divider { background: #e2e8f0; }
+body.theme-light .sidebar-section-label { color: #a0aec0; }
+body.theme-light .mood-meter { background: #edf2f7; }
+body.theme-light .sidebar-footer,
+body.theme-light .sidebar-foot { background: #f7fafc; border-top-color: #e2e8f0; }

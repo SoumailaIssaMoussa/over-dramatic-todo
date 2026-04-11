@@ -97,3 +97,52 @@
 
 .spin-small { display: inline-block; animation: spin 1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* Priority selector */
+.priority-row { display:flex; gap:8px; flex-wrap:wrap; }
+.priority-btn {
+  flex:1; padding:8px 10px; border-radius:10px; border:1px solid var(--border);
+  background:var(--bg-secondary); color:var(--text-dim); cursor:pointer;
+  font-size:.8rem; font-weight:600; transition:.15s; white-space:nowrap;
+}
+.priority-btn:hover  { border-color:var(--p-color,var(--accent)); color:var(--p-color,var(--accent)); }
+.priority-btn.active { border-color:var(--p-color,var(--accent)); background:color-mix(in srgb,var(--p-color,var(--accent)) 15%,transparent); color:var(--p-color,var(--accent)); }
+/* Recurring */
+.recurring-toggle { background:var(--bg-secondary); border:1px solid var(--border); border-radius:12px; padding:14px; }
+.toggle-label { display:flex; align-items:center; gap:10px; cursor:pointer; }
+.toggle-label input[type=checkbox] { width:16px; height:16px; accent-color:var(--accent); }
+.toggle-text { font-weight:600; color:var(--text-primary); }
+.toggle-sub  { font-size:.78rem; color:var(--text-dim); margin-left:auto; }
+.recurring-opts { display:flex; align-items:center; gap:16px; margin-top:12px; padding-top:12px; border-top:1px solid var(--border); }
+.recurring-opts select { padding:8px 12px; border-radius:8px; border:1px solid var(--border); background:var(--bg-card); color:var(--text-primary); }
+/* File upload */
+.file-upload-label { display:flex; flex-direction:column; align-items:center; gap:4px; cursor:pointer; padding:20px; border:2px dashed var(--border); border-radius:12px; color:var(--text-dim); font-size:.85rem; transition:.15s; }
+.file-upload-label:hover { border-color:var(--accent); color:var(--accent); }
+.file-types { font-size:.72rem; opacity:.6; }
+.file-chosen-bar { display:flex; align-items:center; gap:10px; padding:12px; background:var(--bg-secondary); border:1px solid var(--accent); border-radius:12px; }
+.file-icon { font-size:1.4rem; }
+.file-info { flex:1; min-width:0; }
+.file-link  { color:var(--accent); font-size:.85rem; font-weight:600; text-decoration:none; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.file-link:hover { text-decoration:underline; }
+.file-size  { font-size:.72rem; color:var(--text-dim); }
+.upload-progress { display:flex; flex-direction:column; gap:8px; padding:16px; }
+.progress-bar  { height:6px; background:var(--bg-secondary); border-radius:3px; overflow:hidden; }
+.progress-fill { height:100%; background:var(--accent); border-radius:3px; transition:width .2s; }
+
+/* ── Light theme modal overrides ─────────────────────────────── */
+body.theme-light .modal-overlay { background: rgba(0,0,0,0.45); }
+body.theme-light .modal-box {
+  background: white;
+  border-color: #e2e8f0;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+body.theme-light .modal-sub { color: #718096; }
+body.theme-light .modal-close { color: #718096; }
+body.theme-light .modal-close:hover { background: #f7fafc; color: #2d3748; }
+body.theme-light .modal-error {
+  background: rgba(229,62,62,0.08);
+  border-color: rgba(229,62,62,0.3);
+  color: #c53030;
+}
+body.theme-light .file-upload-area { border-color: #e2e8f0; }
+body.theme-light .file-upload-area:hover { border-color: #667eea; }
